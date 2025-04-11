@@ -15,5 +15,5 @@ class Command(BaseCommand):
 
         for phone in phones:
             Phone(id_phone=phone.get('id'), name=phone.get('name'), image=phone.get('image'),
-                  price=phone.get('price'), release_date=phone.get('release_date'),
+                  price=int(phone.get('price')), release_date=phone.get('release_date'),
                   lte_exists=phone.get('lte_exists'), slug=slugify(phone.get('name'))).save()
